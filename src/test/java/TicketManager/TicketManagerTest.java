@@ -32,7 +32,7 @@ public class TicketManagerTest {
         Ticket[] actual = manager.search("MSK", "SPB");
         Ticket[] expected = {ticket2, ticket1, ticket6, ticket4, ticket8};
 
-        Assertions.assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -58,7 +58,7 @@ public class TicketManagerTest {
         Ticket[] actual = manager.search("MSK", "LA");
         Ticket[] expected = {};
 
-        Assertions.assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -84,7 +84,7 @@ public class TicketManagerTest {
         Ticket[] actual = manager.search("NEW", "LA");
         Ticket[] expected = {ticket7};
 
-        Assertions.assertArrayEquals(expected, actual);
+       assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -110,7 +110,7 @@ public class TicketManagerTest {
 
         Ticket[] actual = manager.searchAndSortBy("MSK", "SPB", comparator);
         Ticket[] expected = {ticket8, ticket1, ticket2, ticket6, ticket4};
-        Assertions.assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -137,7 +137,7 @@ public class TicketManagerTest {
         Ticket[] actual = manager.searchAndSortBy("NEW", "MSK", comparator);
         Ticket[] expected = {};
 
-        Assertions.assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -164,8 +164,9 @@ public class TicketManagerTest {
         Ticket[] actual = manager.searchAndSortBy("NEW", "LA", comparator);
         Ticket[] expected = {ticket7};
 
-        Assertions.assertArrayEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
+
     @Test
     public void testCompareTicketsWithSameDurationReturnsZero() {
 
@@ -178,6 +179,7 @@ public class TicketManagerTest {
 
         assertEquals(0, result);
     }
+
     @Test
     public void testFindAllReturnsAddedTickets() {
         AviaSouls manager = new AviaSouls();
@@ -271,6 +273,7 @@ public class TicketManagerTest {
         assertFalse(ticket1.equals(ticket2));
         assertNotEquals(ticket1.hashCode(), ticket2.hashCode());
     }
+
     @Test
     public void testGetPrice_ReturnsCorrectPrice() {
         int expectedPrice = 150;

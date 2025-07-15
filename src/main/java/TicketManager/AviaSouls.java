@@ -16,6 +16,7 @@ public class AviaSouls {
      */
     private Ticket[] addToArray(Ticket[] current, Ticket ticket) {
         Ticket[] tmp = new Ticket[current.length + 1];
+
         for (int i = 0; i < current.length; i++) {
             tmp[i] = current[i];
         }
